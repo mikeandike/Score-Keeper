@@ -22,10 +22,14 @@
     CGFloat screenWidth = self.view.frame.size.width;
     CGFloat screenHeight = self.view.frame.size.height;
     
+    
+    
     UIScrollView *scrollview = [UIScrollView new];
+    self.title = @"Score Keeper";
     scrollview.frame = CGRectMake(margin, topRow, screenWidth - 30, screenHeight);
     scrollview.backgroundColor = [UIColor purpleColor];
     [self.view addSubview:scrollview];
+    
 
 }
 
