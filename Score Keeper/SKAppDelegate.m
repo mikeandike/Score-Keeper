@@ -7,14 +7,20 @@
 //
 
 #import "SKAppDelegate.h"
-#import "SKViewController.h"
+#import "ScoreViewController.h"
 
 @implementation SKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [SKViewController new];
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    
+    ScoreViewController *rootViewController = [ScoreViewController new];
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:rootViewController];
+    
+    
+    self.window.rootViewController = navigationController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

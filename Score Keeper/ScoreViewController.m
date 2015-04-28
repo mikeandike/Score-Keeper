@@ -6,18 +6,27 @@
 //  Copyright (c) 2015 DevMountain. All rights reserved.
 //
 
-#import "SKViewController.h"
+#import "ScoreViewController.h"
 
-@interface SKViewController ()
+@interface ScoreViewController ()
 
 @end
 
-@implementation SKViewController
+@implementation ScoreViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CGFloat topRow = 20;
+    CGFloat margin = 15;
+    CGFloat screenWidth = self.view.frame.size.width;
+    CGFloat screenHeight = self.view.frame.size.height;
+    
+    UIScrollView *scrollview = [UIScrollView new];
+    scrollview.frame = CGRectMake(margin, topRow, screenWidth - 30, screenHeight);
+    scrollview.backgroundColor = [UIColor purpleColor];
+    [self.view addSubview:scrollview];
 
-    UIViewController
 }
 
 - (void)didReceiveMemoryWarning {
