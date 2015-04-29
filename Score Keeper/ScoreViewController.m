@@ -22,6 +22,7 @@
 
 CGFloat topRow = 25;
 CGFloat margin = 15;
+CGFloat top = 0;
 
 
 - (void)viewDidLoad {
@@ -41,17 +42,18 @@ CGFloat margin = 15;
     CGSize contentSize = CGSizeMake(screenWidth, screenHeight * 2);
     self.scrollView.contentSize = contentSize;
     
-    [self addScoreView:0];
+    for (int i = 0; i<4; i++) {
+        [self addScoreView:i];
+    }
     
 
 }
 - (void)addScoreView:(int)index
 {
     CGFloat scrollViewWidth = self.view.frame.size.width;
-    CGFloat screenHeight = self.view.frame.size.height;
     
     UIView *boxView = [UIView new];
-    boxView.frame = CGRectMake(0, 2, scrollViewWidth, 100);
+    boxView.frame = CGRectMake(0, top + 2, scrollViewWidth, 100);
     boxView.backgroundColor = [UIColor orangeColor];
     [self.scrollView addSubview:boxView];
     
@@ -59,7 +61,6 @@ CGFloat margin = 15;
     self.name.frame = CGRectMake(margin - 5, 40, 70, 20);
     self.name.backgroundColor = [UIColor whiteColor];
     self.name.placeholder = @"Name";
-//  [name becomeFirstResponder];
     [boxView addSubview:self.name];
     
     UILabel *score = [UILabel new];
@@ -78,6 +79,8 @@ CGFloat margin = 15;
     
     
     [boxView addSubview:button];
+    
+    top += 110;
 
 }
 - (void)valueChanged:(UIStepper *)sender
@@ -99,20 +102,5 @@ CGFloat margin = 15;
     
     [self.name resignFirstResponder];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
