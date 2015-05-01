@@ -110,12 +110,11 @@
 		71DEBF191924955A0032F31F /* Score Keeper */ = {
 			isa = PBXGroup;
 			children = (
+				8C14ECDC1AF423A4007FA8B6 /* Controllers */,
 				71DEBF221924955A0032F31F /* SKAppDelegate.h */,
 				71DEBF231924955A0032F31F /* SKAppDelegate.m */,
 				71DEBF251924955A0032F31F /* Images.xcassets */,
 				71DEBF1A1924955A0032F31F /* Supporting Files */,
-				D2A5146E1AF01B4000A4093E /* ScoreViewController.h */,
-				D2A5146F1AF01B4000A4093E /* ScoreViewController.m */,
 			);
 			path = "Score Keeper";
 			sourceTree = "<group>";
@@ -147,6 +146,15 @@
 				71DEBF351924955A0032F31F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C14ECDC1AF423A4007FA8B6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2A5146E1AF01B4000A4093E /* ScoreViewController.h */,
+				D2A5146F1AF01B4000A4093E /* ScoreViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

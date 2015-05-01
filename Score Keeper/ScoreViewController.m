@@ -14,7 +14,7 @@
 
 @property (strong,nonatomic) NSMutableArray *scoreLabels;
 
-@property (nonatomic, strong)UITextField *name;
+@property (nonatomic, strong) UITextField *name;
 
 @end
 
@@ -58,6 +58,7 @@ CGFloat top = 0;
     [self.scrollView addSubview:boxView];
     
     self.name = [UITextField new];
+    self.name.delegate = self;
     self.name.frame = CGRectMake(margin - 5, 40, 70, 20);
     self.name.backgroundColor = [UIColor whiteColor];
     self.name.placeholder = @"Name";
@@ -92,15 +93,18 @@ CGFloat top = 0;
     UILabel *label = self.scoreLabels[index];
     label.text = [NSString stringWithFormat:@"%d", value];
 }
+//
+//- (void)textFieldDidBeginEditing:(UITextField *)textField {
+//    
+//    [textField becomeFirstResponder];
+//}
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    
-    [self.name becomeFirstResponder];
-}
+#pragma mark - TextField Delegate Methods
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    
-    [self.name resignFirstResponder];
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end
